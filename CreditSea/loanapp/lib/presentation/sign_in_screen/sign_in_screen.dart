@@ -224,14 +224,19 @@ class SignInScreen extends GetWidget<SignInScreenController> {
             text: "Sign In".tr,
             buttonTextStyle: theme.textTheme.titleMedium!,
             onPressed: () {
-              Get.offNamed(AppRoutes.detailsOneScreen);
+              controller.signIn();
             },
           ),
           SizedBox(height: 14.h),
           Center(
-            child: Text(
-              "New to CreditSea? Create an account".tr,
-              style: CustomTextStyles.titleSmallBlue900,
+            child: InkWell(
+              onTap: () {
+                Get.offNamed(AppRoutes.createAnAccountScreen);
+              },
+              child: Text(
+                "New to CreditSea? Create an account".tr,
+                style: CustomTextStyles.titleSmallBlue900,
+              ),
             ),
           ),
         ],

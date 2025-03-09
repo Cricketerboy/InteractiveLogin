@@ -41,14 +41,15 @@ class OtpScreenController extends GetxController with CodeAutoFill {
         }),
       );
 
-      print("Response Code: ${response.statusCode}");
-      print("Response Body: ${response.body}");
+      // print("Response Code: ${response.statusCode}");
+      // print("Response Body: ${response.body}");
 
       var data = jsonDecode(response.body);
       if (response.statusCode == 200) {
         Get.snackbar("Success", "OTP Verified Successfully!",
             snackPosition: SnackPosition.BOTTOM);
-        Get.offNamed(AppRoutes.passwordScreen);
+        Get.offNamed(AppRoutes.passwordScreen,
+            arguments: {"phone": phoneNumber.value});
       } else {
         Get.snackbar("Error", data["message"] ?? "Invalid OTP",
             snackPosition: SnackPosition.BOTTOM);

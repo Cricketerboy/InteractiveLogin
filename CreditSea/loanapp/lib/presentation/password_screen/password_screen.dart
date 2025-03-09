@@ -161,7 +161,7 @@ class PasswordScreen extends GetWidget<PasswordController> {
             text: "Proceed".tr,
             buttonTextStyle: theme.textTheme.titleMedium,
             onPressed: () {
-              Get.offNamed(AppRoutes.signInScreen); // Navigate using AppRoutes
+              controller.submitPassword(); // Navigate using AppRoutes
             },
           ),
         ],

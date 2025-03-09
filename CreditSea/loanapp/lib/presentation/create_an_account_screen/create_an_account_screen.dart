@@ -174,9 +174,14 @@ class CreateAnAccountScreen extends GetWidget<CreateAnAccountScreenController> {
             },
           ),
           SizedBox(height: 40.h),
-          Text(
-            "Existing User? Sign in".tr,
-            style: CustomTextStyles.titleSmallBlue900,
+          InkWell(
+            onTap: () {
+              Get.offNamed(AppRoutes.signInScreen);
+            },
+            child: Text(
+              "Existing User? Sign in".tr,
+              style: CustomTextStyles.titleSmallBlue900,
+            ),
           ),
         ],
       ),
